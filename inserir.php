@@ -1,6 +1,6 @@
 <?php 
 error_reporting(0);
-require("connecta.php");
+require("inc/connecta.php");
 
 
 function getRealIpAddr(){
@@ -21,7 +21,7 @@ function getPara($paramName){
 	}
 	*/
 	if (isset($_POST[$paramName])){
-		return $_POST[$paramName];
+		return strip_tags($_POST[$paramName]);
 	}
 	return "";
 };
