@@ -1,5 +1,5 @@
 <?php
-require_once("config.php");
+require_once("../inc/config.php");
 $realm = 'Restricted area';
 
 // function to parse the http auth header
