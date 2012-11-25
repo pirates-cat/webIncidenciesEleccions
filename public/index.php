@@ -20,7 +20,7 @@ if (!$result) {
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title>Incidencies reportades durant la jornada electoral del 25N</title>
+  <title>Incidències reportades durant la jornada electoral del 25N</title>
   
   <!-- Included CSS Files (Uncompressed) -->
   <!--
@@ -85,7 +85,7 @@ setInterval(function(){updateTable()},60000);
   <div class="row">
     <div class="twelve columns">
 
-      <h4>Incidencies reportades durant la jornada electoral del 25N</h4>
+      <h4>Incidències reportades durant la jornada electoral del 25N</h4>
           	<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style ">
 		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -98,10 +98,10 @@ setInterval(function(){updateTable()},60000);
 		<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b130f3428512fc"></script>
 		<br/>
 		<!-- AddThis Button END -->
-      <p>Pots enviar els teus informes mitjançant la app <a href="https://play.google.com/store/apps/details?id=cat.pirata.incidencieseleccions">"Incidencies eleccions 2012" disponible a Google play</a></p>
+      <p>Pots enviar els teus informes mitjançant la app <a href="https://play.google.com/store/apps/details?id=cat.pirata.incidencieseleccions">"Incidències eleccions 2012" disponible a Google play</a></p>
       	
       <dl class="tabs">
-        <dd class="active"><a href="#simple1">Incidencies</a></dd>
+        <dd class="active"><a href="#simple1">Incidències</a></dd>
         <!--dd><a href="#simple2">Mapa</a></dd-->
         <dd><a href="#simple3">Quant a</a></dd>
       </dl>
@@ -126,9 +126,11 @@ setInterval(function(){updateTable()},60000);
           						$rows = 0;
           						// data,partit_afectat,provincia,poblacio,collegi_electoral,solucionada,causa,comentari
           						while ($row = mysql_fetch_assoc($result)) {
-          							$row['provincia']= ucfirst(strtolower($row['provincia']));
-									$row['poblacio']= ucfirst(strtolower($row['poblacio']));
-									$row['collegi_electoral']= ucfirst(strtolower($row['collegi_electoral']));
+								$row['poblacio']= ucfirst(mb_strtolower($row['poblacio'],'UTF-8'));
+								$row['collegi_electoral']= ucfirst(mb_strtolower($row['collegi_electoral'],'UTF-8'));
+          							//$row['provincia']= ucfirst(strtolower($row['provincia']));
+									//$row['poblacio']= ucfirst(strtolower($row['poblacio']));
+									///$row['collegi_electoral']= ucfirst(strtolower($row['collegi_electoral']));
 									
 									if ($row['solucionada'] == "1"){
 										$row['comentari'] = $row['comentari'] . "<br/>[Solucionada!]"; 

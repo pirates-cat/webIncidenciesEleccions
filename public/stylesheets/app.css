@@ -1,29 +1,28 @@
-/* Artfully masterminded by ZURB  */
+body {
+	background-attachment: fixed;
+	background-color: #FFF;
+	background-position: left top;
+	background-repeat: no-repeat;
+       	background-image: url("http://pirata.cat/wp-content/uploads/background1.png");
+	color: #333;
+}
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+a {
+	color: #993399;
+}
 
+.tabs dd.active a, .tabs li.active a {
+	background: none repeat scroll 0 0 #993399;
+}
 
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
+.fbFeedbackPosts {
+	background-color: black;
+}
 
+.tabs dd a {
+	background-color: #AAA;
+}
 
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
-
+#resultsTable th {
+	color: white;
+}
