@@ -12,44 +12,44 @@ function execQuery($link, $consulta){
 
 $block = (isset($_GET['block']))? $_GET['block'] : false;
 if ($block){
-	execQuery($link, sprintf("INSERT IGNORE INTO `incidenciesEleccions`.`ip_bans` values('%s');", mysql_real_escape_string($block)));
+	execQuery($link, sprintf("INSERT IGNORE INTO `".$publicDataBase."`.`ip_bans` values('%s');", mysql_real_escape_string($block)));
 }
 
 $blockdevice = (isset($_GET['blockdevice']))? $_GET['blockdevice'] : false;
 if ($blockdevice){
-	execQuery($link, sprintf("INSERT IGNORE INTO `incidenciesEleccions`.`device_bans` values('%s');", mysql_real_escape_string($blockdevice)));
+	execQuery($link, sprintf("INSERT IGNORE INTO `".$publicDataBase."`.`device_bans` values('%s');", mysql_real_escape_string($blockdevice)));
 }
 
 $delete = (isset($_GET['delete']))? $_GET['delete'] : false;
 if ($delete){
-	execQuery($link, sprintf("DELETE FROM `incidenciesEleccions`.`incidencies` where id = '%s';", mysql_real_escape_string($delete)));
+	execQuery($link, sprintf("DELETE FROM `".$publicDataBase."`.`incidencies` where id = '%s';", mysql_real_escape_string($delete)));
 }
 
 $resolve = (isset($_GET['resolve']))? $_GET['resolve'] : false;
 if ($resolve){
-	execQuery($link, sprintf("UPDATE `incidenciesEleccions`.`incidencies` set solucionada = '1' where id = '%s';", mysql_real_escape_string($resolve)));
+	execQuery($link, sprintf("UPDATE `".$publicDataBase."`.`incidencies` set solucionada = '1' where id = '%s';", mysql_real_escape_string($resolve)));
 }
 
 $unresolve = (isset($_GET['unresolve']))? $_GET['unresolve'] : false;
 if ($unresolve){
-	execQuery($link, sprintf("UPDATE `incidenciesEleccions`.`incidencies` set solucionada = '0' where id = '%s';", mysql_real_escape_string($unresolve)));
+	execQuery($link, sprintf("UPDATE `".$publicDataBase."`.`incidencies` set solucionada = '0' where id = '%s';", mysql_real_escape_string($unresolve)));
 }
 
 $hide = (isset($_GET['hide']))? $_GET['hide'] : false;
 if ($hide){
-	execQuery($link, sprintf("UPDATE `incidenciesEleccions`.`incidencies` set borrada = '1' where id = '%s';", mysql_real_escape_string($hide)));
+	execQuery($link, sprintf("UPDATE `".$publicDataBase."`.`incidencies` set borrada = '1' where id = '%s';", mysql_real_escape_string($hide)));
 }
 
 $show = (isset($_GET['show']))? $_GET['show'] : false;
 if ($show){
-	execQuery($link, sprintf("UPDATE `incidenciesEleccions`.`incidencies` set borrada = '0' where id = '%s';", mysql_real_escape_string($show)));
+	execQuery($link, sprintf("UPDATE `".$publicDataBase."`.`incidencies` set borrada = '0' where id = '%s';", mysql_real_escape_string($show)));
 }
 
 $order = (isset($_GET['order']))? $_GET['order'] : false;
 if (!$order){
-	$consulta = sprintf("SELECT * FROM `incidenciesEleccions`.`incidencies`;");
+	$consulta = sprintf("SELECT * FROM `".$publicDataBase."`.`incidencies`;");
 }else{
-	$consulta = sprintf("SELECT * FROM `incidenciesEleccions`.`incidencies` order by %s;", mysql_real_escape_string($order));
+	$consulta = sprintf("SELECT * FROM `".$publicDataBase."`.`incidencies` order by %s;", mysql_real_escape_string($order));
 }
 
 $result = mysql_query($consulta, $link);

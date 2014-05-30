@@ -8,7 +8,7 @@ function getPara($paramName){
 };
 $since = getPara('since') + 0;
 //$since = 1353800683;
-$query = sprintf("SELECT DATE_FORMAT(data,%s) hora,partit_afectat,provincia,poblacio,collegi_electoral,solucionada,causa,comentari FROM `incidenciesEleccions`.`incidencies` where borrada = '0' and data > FROM_UNIXTIME(%d) order by data ASC;","'%d/%m</br>%H:%ih'",mysql_real_escape_string($since));
+$query = sprintf("SELECT DATE_FORMAT(data,%s) hora,partit_afectat,provincia,poblacio,collegi_electoral,solucionada,causa,comentari FROM `".$publicDataBase."`.`incidencies` where borrada = '0' and data > FROM_UNIXTIME(%d) order by data ASC;","'%d/%m</br>%H:%ih'",mysql_real_escape_string($since));
 $result = mysql_query($query, $link);
 
 $arrayReturn = array();

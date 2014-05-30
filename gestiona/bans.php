@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
 $deleteip = (isset($_GET['deleteip']))? $_GET['deleteip'] : false;
 if ($deleteip){
-	$consulta = sprintf("DELETE FROM `incidenciesEleccions`.`ip_bans` where ip = '%s';", mysql_real_escape_string($deleteip));
+	$consulta = sprintf("DELETE FROM `".$publicDataBase."`.`ip_bans` where ip = '%s';", mysql_real_escape_string($deleteip));
 	$result = mysql_query($consulta, $link);
 	if (!$result) {
 		die('Invalid query: ' . mysql_error());
@@ -14,14 +14,14 @@ if ($deleteip){
 
 $deletedevice = (isset($_GET['deletedevice']))? $_GET['deletedevice'] : false;
 if ($deletedevice){
-	$consulta = sprintf("DELETE FROM `incidenciesEleccions`.`device_bans` where deviceid = '%s';", mysql_real_escape_string($deletedevice));
+	$consulta = sprintf("DELETE FROM `".$publicDataBase."`.`device_bans` where deviceid = '%s';", mysql_real_escape_string($deletedevice));
 	$result = mysql_query($consulta, $link);
 	if (!$result) {
 		die('Invalid query: ' . mysql_error());
 	}
 }
 
-$consulta = sprintf("SELECT * FROM `incidenciesEleccions`.`device_bans`;");
+$consulta = sprintf("SELECT * FROM `".$publicDataBase."`.`device_bans`;");
 $result = mysql_query($consulta, $link);
 if (!$result) {
     die('Invalid query: ' . mysql_error());
@@ -51,7 +51,7 @@ while ($row = mysql_fetch_assoc($result)) {
 }
 echo "</table>";
 
-$consulta = sprintf("SELECT * FROM `incidenciesEleccions`.`ip_bans`;");
+$consulta = sprintf("SELECT * FROM `".$publicDataBase."`.`ip_bans`;");
 $result = mysql_query($consulta, $link);
 if (!$result) {
     die('Invalid query: ' . mysql_error());

@@ -43,7 +43,7 @@ $deviceid = getPara('deviceid');
 $return = array();
 
 if($ip){
-	$consulta = sprintf("SELECT * FROM `incidenciesEleccions`.`device_bans` WHERE deviceid = '%s' UNION SELECT * FROM `incidenciesEleccions`.`ip_bans` WHERE ip = '%s'",mysql_real_escape_string($deviceid),mysql_real_escape_string($ip));
+	$consulta = sprintf("SELECT * FROM `".$publicDataBase."`.`device_bans` WHERE deviceid = '%s' UNION SELECT * FROM `".$publicDataBase."`.`ip_bans` WHERE ip = '%s'",mysql_real_escape_string($deviceid),mysql_real_escape_string($ip));
 	$resultado = mysql_query($consulta, $link);
 	if (!$resultado) {
 		$return['message'] = "request_fail";
@@ -52,7 +52,7 @@ if($ip){
 			$return['message'] = "request_denied";
 		}else{
 			if ($partit_afectat != "" && $provincia != "" && $poblacio != "" && $collegi_electoral !="" && $causa != "" && $reportador != "" && $contacte_reportador != ""){
-				$consulta = sprintf("INSERT INTO  `incidenciesEleccions`.`incidencies` ( `ip` , `partit_afectat` , `provincia`, `poblacio`, `coords` , `deviceid`,`collegi_electoral` , `causa` , `reportador` , `contacte_reportador` , `comentari`)
+				$consulta = sprintf("INSERT INTO  `".$publicDataBase."`.`incidencies` ( `ip` , `partit_afectat` , `provincia`, `poblacio`, `coords` , `deviceid`,`collegi_electoral` , `causa` , `reportador` , `contacte_reportador` , `comentari`)
 				VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
 					mysql_real_escape_string($ip),
 					mysql_real_escape_string($partit_afectat),

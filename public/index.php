@@ -1,6 +1,6 @@
 <?php
 require('../inc/connecta.php');
-$result = mysql_query("SELECT DATE_FORMAT(data,'%d/%m</br>%H:%ih') hora,partit_afectat,provincia,poblacio,collegi_electoral,solucionada,causa,comentari FROM `incidenciesEleccions`.`incidencies` where borrada = '0' order by data DESC;", $link);
+$result = mysql_query("SELECT DATE_FORMAT(data,'%d/%m</br>%H:%ih') hora,partit_afectat,provincia,poblacio,collegi_electoral,solucionada,causa,comentari FROM `".$publicDataBase."`.`incidencies` where borrada = '0' order by data DESC;", $link);
 if (!$result) {
 	$incidenciesFound = false;
 }else{
@@ -20,7 +20,7 @@ if (!$result) {
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title>Incidències reportades durant la jornada electoral del 25N</title>
+  <title>Incidències reportades durant la jornada electoral del 25M</title>
   
   <!-- Included CSS Files (Uncompressed) -->
   <!--
@@ -66,7 +66,7 @@ setInterval(function(){updateTable()},60000);
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ca_ES/all.js#xfbml=1&appId=298459083606110";
+  js.src = "//connect.facebook.net/ca_ES/all.js#xfbml=1&appId=776951622323328";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <script type="text/javascript">
@@ -85,7 +85,7 @@ setInterval(function(){updateTable()},60000);
   <div class="row">
     <div class="twelve columns">
 
-      <h4>Incidències reportades durant la jornada electoral del 25N</h4>
+      <h4>Incidències reportades durant la jornada electoral del 25M</h4>
           	<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style ">
 		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -98,7 +98,7 @@ setInterval(function(){updateTable()},60000);
 		<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b130f3428512fc"></script>
 		<br/>
 		<!-- AddThis Button END -->
-      <p>Pots enviar els teus informes mitjançant la app <a href="https://play.google.com/store/apps/details?id=cat.pirata.incidencieseleccions">"Incidències eleccions 2012" disponible a Google play</a></p>
+      <p>Pots enviar els teus informes mitjançant la app <a href="https://play.google.com/store/apps/details?id=cat.pirata.incidencieseleccions">"Incidències eleccions" disponible a Google play</a></p>
       	
       <dl class="tabs">
         <dd class="active"><a href="#simple1">Incidències</a></dd>
@@ -197,7 +197,7 @@ setInterval(function(){updateTable()},60000);
  <div class="row">
     <div class="twelve columns">
 
-		<div class="fb-comments" data-href="https://xifrat.pirata.cat/incidencies25N/" data-num-posts="10" data-width="470" data-colorscheme="dark"></div>
+		<div class="fb-comments" data-href="https://xifrat.pirata.cat/incidencies25M/" data-num-posts="10" data-width="470" data-colorscheme="dark"></div>
   	
   	</div>
   </div>
