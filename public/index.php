@@ -20,7 +20,7 @@ if (!$result) {
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title>Incidències reportades durant la jornada electoral del 25N</title>
+  <title>Incidències reportades durant la jornada electoral del 9N</title>
   
   <!-- Included CSS Files (Uncompressed) -->
   <!--
@@ -85,7 +85,7 @@ setInterval(function(){updateTable()},60000);
   <div class="row">
     <div class="twelve columns">
 
-      <h4>Incidències reportades durant la jornada electoral del 25N</h4>
+      <h4>Incidències reportades durant la jornada electoral del 9N</h4>
           	<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style ">
 		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -197,7 +197,7 @@ setInterval(function(){updateTable()},60000);
  <div class="row">
     <div class="twelve columns">
 
-		<div class="fb-comments" data-href="https://xifrat.pirata.cat/incidencies25N/" data-num-posts="10" data-width="470" data-colorscheme="dark"></div>
+		<div class="fb-comments" data-href="https://xifrat.pirata.cat/incidencies9N/" data-num-posts="10" data-width="470" data-colorscheme="dark"></div>
   	
   	</div>
   </div>
